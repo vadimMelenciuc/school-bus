@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "declaration": true,
+        "target": "es2019",
+        "module": "commonjs",
+        "outDir": "./lib",
+        "rootDir": "./src",
+        "sourceMap": true,
+        "incremental": true,
+        "tsBuildInfoFile": "./lib/.tsbuildinfo",
+        "resolveJsonModule": true,
+        "noUnusedLocals": true,
+        "suppressImplicitAnyIndexErrors": true
+    },
+    "include": [
+        "./src"
+    ]
+}
