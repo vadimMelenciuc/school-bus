@@ -17,6 +17,7 @@
     "sinon": "^9.2.1"
   },
   "scripts": {
+    "build": "tsc",
     "test": "mocha -r ts-node/register src/**/*.spec.ts --recursive",
     "coverage": "npx nyc npm run test"
   },
