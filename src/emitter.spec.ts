@@ -1,4 +1,3 @@
-import 'mocha';
 import { expect } from 'chai';
 import { spy, SinonSpy } from 'sinon';
 
@@ -40,7 +39,7 @@ describe('emitter functionality testing', () => {
 
         expect(notifySpy.called).to.be.eq(true, 'Did not called the bus notification');
         expect(notifySpy.calledWithMatch(id)).to.be.eq(true, 'Not called with ID');
-        expect(notifySpy.calledWithMatch(event)).to.be.eq(true, 'Not called with event');
-        expect(notifySpy.calledWithMatch(content)).to.be.eq(true, 'Not called with content');
+        expect(notifySpy.calledWithMatch(id, event)).to.be.eq(true, 'Not called with event');
+        expect(notifySpy.calledWithMatch(id, event, content)).to.be.eq(true, 'Not called with content');
     });
 });
