@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 
 import { Bus } from './bus';
-import { IBus } from './models';
+import { IBus, IObserver } from './models';
 
 describe('bus functionality testing', () => {
     let id: string;
@@ -29,5 +29,21 @@ describe('bus functionality testing', () => {
         const emittersLength = bus.emitters.length;
         bus.registerEmitter(duplicatedEmitterId);
         expect(bus.emitters.length).to.be.eq(emittersLength, 'Registered a duplicated emitter');
+    });
+
+    it('Should register a observer', () => {
+        let observer = ({ observer: 'observer' } as unknown) as IObserver;
+        const observersLength = bus.observers.length;
+        bus.registerObserver(observer);
+        expect(bus.observers.length).to.not.be.eq(observersLength, 'Registered a observer');
+    });
+
+    it('Should register many observer', () => {
+        let observer1 = ({ observer: 'observer' } as unknown) as IObserver;
+        let observer2 = ({ observer: 'observer' } as unknown) as IObserver;
+        let observers = [observer1, observer2]
+        const observersLength = bus.observers.length;
+        bus.registerObserver(observers);
+        expect(bus.observers.length).to.not.be.eq(observersLength, 'Registered a observer');
     });
 });
