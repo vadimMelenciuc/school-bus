@@ -15,7 +15,7 @@ export class Bus implements IBus {
         }
     }
 
-    public registerEmitter(id: string) {
+    public registerEmitter(id: string): boolean {
         if (!this.emitters.includes(id)) {
             this.emitters.push(id);
             return true;
@@ -23,7 +23,7 @@ export class Bus implements IBus {
         return false;
     }
 
-    public registerObserver(observer: IObserver | IObserver[]) {
+    public registerObserver(observer: IObserver | IObserver[]): void {
         if (Array.isArray(observer)) {
             for (const obs of observer) {
                 this.observers.push(obs);
@@ -33,7 +33,7 @@ export class Bus implements IBus {
         }
     }
 
-    public notify(event: string, emitter: string, action: any) {
+    public notify(event: string, emitter: string, action: any): void {
         for (const observer of this.observers) {
             observer.notification(event, emitter, action);
         }
