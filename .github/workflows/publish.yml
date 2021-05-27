@@ -15,6 +15,7 @@ jobs:
               uses: actions/setup-node@v1.4.4
               with:
                   node-version: 14
+                  registry-url: https://registry.npmjs.org/
                   check-latest: true
             - name: 🚀 publish
               run: npm ci && npm run build && npm publish --access public
