@@ -1,6 +1,6 @@
 {
-    "name": "school-bus",
-    "version": "0.0.1",
+    "name": "@costadvl/school-bus",
+    "version": "0.0.2",
     "description": "school-bus is a prototype of an event bus based on the observer and subscriber pattern",
     "main": "index.js",
     "dependencies": {},
