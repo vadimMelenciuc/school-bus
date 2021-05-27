@@ -16,7 +16,7 @@ jobs:
               with:
                   node-version: 14
                   check-latest: true
-            - name: 🔨 build
+              run: npm ci
               run: npm run build
             - name: 🚀 publish
               run: npm publish --access public
