@@ -1,8 +1,8 @@
 {
     "name": "@costadvl/school-bus",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "school-bus is a prototype of an event bus based on the observer and subscriber pattern",
-    "main": "index.js",
+    "main": "lib/index.js",
     "dependencies": {},
     "devDependencies": {
         "@types/chai": "^4.2.14",
